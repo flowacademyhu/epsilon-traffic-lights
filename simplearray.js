@@ -11,3 +11,5 @@ const simplearray = (number) => { // number várja a N számot (NxN 0-val feltö
 };
 
 module.exports = { simplearray };
+
+console.log(simplearray(10));
