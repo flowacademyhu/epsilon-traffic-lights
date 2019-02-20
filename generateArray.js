@@ -23,7 +23,21 @@ function fill (array) {
   }
   return array;
 }
+
+let finalarray = fill(main(size));
+
+const print2D = (array) => {
+  for (let x = 0; x < finalarray.length; x++) {
+    for (let y = 0; y < finalarray[x].length; y++) {
+      process.stdout.write(finalarray[x][y] + '');
+    }    console.log();
+  }
+};
+
+print2D();
+
 module.exports = {
   fill,
-  main
+  main,
+  print2D
 };
