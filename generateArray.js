@@ -24,17 +24,67 @@ function fill (array) {
   return array;
 }
 
+// alaptömb
 let finalarray = fill(main(size));
 
+const lightnorth = (array) => {
+  if (array[13][13] === 'P') {
+    array[13][13] = 'Z';
+    return true;
+  } else {
+    array[13][13] = 'P';
+    return false;
+  }
+};
+
+const lightwest = (array) => {
+  if (array[16][13] === 'P') {
+    array[16][13] = 'Z';
+    return true;
+  } else {
+    array[16][13] = 'P';
+    return false;
+  }
+};
+
+const lightsouth = (array) => {
+  if (array[16][16] === 'P') {
+    array[16][16] = 'Z';
+    return true;
+  } else {
+    array[16][16] = 'P';
+    return false;
+  }
+};
+
+const lighteast = (array) => {
+  if (array[13][16] === 'P') {
+    array[13][16] = 'Z';
+    return true;
+  } else {
+    array[13][16] = 'P';
+    return false;
+  }
+};
+
+lightnorth(finalarray);
+
+lightwest(finalarray);
+
+lightsouth(finalarray);
+
+lighteast(finalarray);
+
+// "széppé" varázsolja a pályát
 const print2D = (array) => {
-  for (let x = 0; x < finalarray.length; x++) {
-    for (let y = 0; y < finalarray[x].length; y++) {
-      process.stdout.write(finalarray[x][y] + '');
+  for (let x = 0; x < array.length; x++) {
+    for (let y = 0; y < array[x].length; y++) {
+      process.stdout.write(array[x][y] + '');
     }    console.log();
   }
 };
 
-print2D();
+print2D(finalarray);
 
 module.exports = {
   fill,
