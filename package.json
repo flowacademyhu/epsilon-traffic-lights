@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/flowacademyhu/epsilon-traffic-lights#readme",
   "dependencies": {
+    "delay": "^4.1.0",
     "table": "^5.2.3"
   }
 }
