@@ -5,6 +5,7 @@ const keypress = require('keypress'); // irányításhívás
 let size = 30;
 let finalarray = map.main(size);
 map.fill(finalarray);
+map.print2D(finalarray);
 
 // gombnyomás
 function buttonpress () {
