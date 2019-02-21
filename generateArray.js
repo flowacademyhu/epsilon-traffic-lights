@@ -1,5 +1,3 @@
-let size = 30;
-
 function main (size) {
   let array = new Array(size);
   for (let i = 0; i < size; i++) {
@@ -9,7 +7,6 @@ function main (size) {
 }
 
 function fill (array) {
-  array = main(size);
   for (let y = 0; y < array.length; y++) {
     for (let x = 0; x < array[y].length; x++) {
       if (y == 14 || y == 15 || x == 14 || x == 15) {
@@ -24,58 +21,46 @@ function fill (array) {
   return array;
 }
 
-// alaptömb
-let finalarray = fill(main(size));
-
 const lightnorth = (array) => {
   if (array[13][13] === 'P') {
     array[13][13] = 'Z';
-    return true;
+    return array;
   } else {
     array[13][13] = 'P';
-    return false;
+    return array;
   }
 };
 
 const lightwest = (array) => {
   if (array[16][13] === 'P') {
     array[16][13] = 'Z';
-    return true;
+    return array;
   } else {
     array[16][13] = 'P';
-    return false;
+    return array;
   }
 };
 
 const lightsouth = (array) => {
   if (array[16][16] === 'P') {
     array[16][16] = 'Z';
-    return true;
+    return array;
   } else {
     array[16][16] = 'P';
-    return false;
+    return array;
   }
 };
 
 const lighteast = (array) => {
   if (array[13][16] === 'P') {
     array[13][16] = 'Z';
-    return true;
+    return array;
   } else {
     array[13][16] = 'P';
-    return false;
+    return array;
   }
 };
 
-lightnorth(finalarray);
-
-lightwest(finalarray);
-
-lightsouth(finalarray);
-
-lighteast(finalarray);
-
-// "széppé" varázsolja a pályát
 const print2D = (array) => {
   for (let x = 0; x < array.length; x++) {
     for (let y = 0; y < array[x].length; y++) {
@@ -84,10 +69,12 @@ const print2D = (array) => {
   }
 };
 
-print2D(finalarray);
-
 module.exports = {
   fill,
   main,
-  print2D
+  print2D,
+  lightnorth,
+  lightsouth,
+  lightwest,
+  lighteast
 };
