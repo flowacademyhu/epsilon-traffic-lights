@@ -28,4 +28,4 @@ function moveEast (array, y, x, EastCar) {
   CarMovements[0] = [x, y + 1, EastCar];
   return array;
 }
-moveEast(displayWestCar(finalarray.finalarray), CarMovements[0][0], CarMovements[0][1], CarMovements[0][2]);
+// moveEast(displayWestCar(finalarray.finalarray), CarMovements[0][0], CarMovements[0][1], CarMovements[0][2]);

@@ -1,3 +1,5 @@
+/* megtartottuk az utókornak!
+
 function main (size) {
   let array = new Array(size);
   for (let i = 0; i < size; i++) {
@@ -65,8 +67,10 @@ const print2D = (array) => {
   for (let x = 0; x < array.length; x++) {
     for (let y = 0; y < array[x].length; y++) {
       process.stdout.write(array[x][y] + '');
-    }    console.log();
+    }
+    console.log();
   }
+  return array;
 };
 
 module.exports = {
