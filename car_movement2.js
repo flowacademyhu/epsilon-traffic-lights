@@ -4,7 +4,7 @@ let SouthCar = 1;
 let EastCar = 2;
 let NorthCar = 3;
 let WestCar = 4;
-let CarMovements = [[]];
+let CarMovements = [];
 
 function displayWestCar (array) {
   let positionY = array.length / 2;
@@ -20,12 +20,12 @@ function displayWestCar (array) {
   }
   return array;
 }
-// console.log(displayWestCar(crossroads.fill()));
+console.log(displayWestCar(crossroads.()));
 
 function moveEast (array, x, y) {
-  
   array[x][y] -= EastCar;
   array[x][y + 1] = EastCar;
   return array;
 }
-moveEast(displayWestCar(crossroads.fill()));
+moveEast();
+console.log(CarMovements);
