@@ -1,23 +1,31 @@
 let crossroads = require('./generateArray');
 
-let NorthCar = 1;
-let WestCar = 2;
-let SouthCar = 3;
-let EastCar = 4;
+let SouthCar = 1;
+let EastCar = 2;
+let NorthCar = 3;
+let WestCar = 4;
+let CarMovements = [[]];
 
 function displayWestCar (array) {
-  array = crossroads.fill();
   let positionY = array.length / 2;
   let positionX = 0;
   for (let y = 0; y < array.length; y++) {
     for (let x = 0; x < array[y].length; x++) {
       if (y === positionY && x === positionX) {
-        array[y][x] = WestCar;
+        array[y][x] = EastCar;
+        CarMovements.push([y, x, EastCar]);
+        console.log(CarMovements);
       }
     }
   }
   return array;
 }
-console.log(displayWestCar());
+// console.log(displayWestCar(crossroads.fill()));
 
-function moveWestCar ()
+function moveEast (array, x, y) {
+  
+  array[x][y] -= EastCar;
+  array[x][y + 1] = EastCar;
+  return array;
+}
+moveEast(displayWestCar(crossroads.fill()));
