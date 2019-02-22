@@ -1,41 +1,34 @@
-const map = require('./generateArray'); // tömbhívás
+const map = require('./map'); // tömbhívás
+const ligthswitch = require('./lightswitch'); // lámpahívás
 const keypress = require('keypress'); // irányításhívás
-
-// elkészül a 30x30-as tömb
-let size = 30;
-let finalarray = map.main(size);
-map.fill(finalarray);
-map.print2D(finalarray);
 
 // gombnyomás
 function buttonpress () {
+  process.stdin.setRawMode(true);
   keypress(process.stdin);
-  // process.stdin.setRawMode(true);
   process.stdin.resume();
 }
 
 process.stdin.on('keypress', function (ch, key) {
   if (key) {
     if (key.name === 'up') {
-      map.lightnorth(finalarray);
+      ligthswitch.lightswitch(1, map.map);
     }
     if (key.name === 'down') {
-      map.lightsouth(finalarray);
+      ligthswitch.lightswitch(2, map.map);
     }
     if (key.name === 'left') {
-      map.lightwest(finalarray);
+      ligthswitch.lightswitch(3, map.map);
     }
     if (key.name === 'right') {
-      map.lighteast(finalarray);
+      ligthswitch.lightswitch(4, map.map);
     }
     if (key.name === 'q') {
       process.exit(1);
     }
     console.clear();
-    map.print2D(finalarray);
+    console.log(map.map);
   }
 });
 
 buttonpress();
-
-module.exports = { finalarray };
