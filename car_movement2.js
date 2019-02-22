@@ -1,4 +1,5 @@
-let crossroads = require('./generateArray');
+let finalarray = require('./main');
+let print2D = require('./generateArray');
 
 let SouthCar = 1;
 let EastCar = 2;
@@ -14,18 +15,17 @@ function displayWestCar (array) {
       if (y === positionY && x === positionX) {
         array[y][x] = EastCar;
         CarMovements.push([y, x, EastCar]);
-        console.log(CarMovements);
       }
     }
   }
   return array;
 }
-console.log(displayWestCar(crossroads.()));
+print2D.print2D(displayWestCar(finalarray.finalarray));
 
-function moveEast (array, x, y) {
+function moveEast (array, x, y, EastCar) {
   array[x][y] -= EastCar;
   array[x][y + 1] = EastCar;
+  CarMovements[0] = [x, y + 1, EastCar];
   return array;
 }
-moveEast();
-console.log(CarMovements);
+moveEast(displayWestCar());

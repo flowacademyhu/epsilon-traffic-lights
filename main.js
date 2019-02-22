@@ -9,8 +9,8 @@ map.print2D(finalarray);
 
 // gombnyomás
 function buttonpress () {
-  process.stdin.setRawMode(true);
   keypress(process.stdin);
+  // process.stdin.setRawMode(true);
   process.stdin.resume();
 }
 
@@ -37,3 +37,5 @@ process.stdin.on('keypress', function (ch, key) {
 });
 
 buttonpress();
+
+module.exports = { finalarray };
