@@ -25,7 +25,7 @@ function buildMap (array) {
   return array;
 }
 let map = buildMap(genArr(30));
-console.log(map);
+// console.log(map);
 
 function draw (array) {
   for (let i = 0; i < array.length; i++) {
@@ -36,5 +36,5 @@ function draw (array) {
     } 
   } return array;
 }
-console.log(draw(map));
+// console.log(draw(map));
 module.exports = { map };
