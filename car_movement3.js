@@ -15,4 +15,6 @@ function displayWestCar (array) {
   return array;
 }
 
-console.log(displayWestCar(map.map));
+// console.log(displayWestCar(map.map));
+
+console.log(map.map);
