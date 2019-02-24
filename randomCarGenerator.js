@@ -11,6 +11,8 @@ const randomCarGenerator = (array, carArray) => {
   let max = 5;
   let min = 1;
   let randomNum = Math.floor(Math.random() * (max - min)) + min;
+  console.clear(); // ide tűnik jónak!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  console.log(array); // asszem ez is
   switch (randomNum) {
     case 1:
       let carValue1 = Math.floor(Math.random() * (max - min)) + min;
@@ -36,7 +38,11 @@ const randomCarGenerator = (array, carArray) => {
   return array;
 };
 
-let randomCar = randomCarGenerator(map.map, myCars);
+// vmi nem fasza
+// setInterval(randomCarGenerator(map.map, myCars), 5000);
+
+let randomCar = setInterval(function () { randomCarGenerator(map.map, myCars); }, 5000);
+
 console.log(randomCar);
 console.log(myCars);
 
