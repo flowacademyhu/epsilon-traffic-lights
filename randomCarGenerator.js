@@ -39,3 +39,5 @@ const randomCarGenerator = (array, carArray) => {
 let randomCar = randomCarGenerator(map.map, myCars);
 console.log(randomCar);
 console.log(myCars);
+
+module.exports = { randomCar };
