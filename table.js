@@ -18,5 +18,7 @@ config = {
       return false
   }
 };
-output = table(data, config);
+output = setInterval(function () { table(data, config); }, 1); // bocs Micsik belenyúltam, hétfőn bocsánatot kérek!!
 console.log(output);
+
+module.exports = { output };
