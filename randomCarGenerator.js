@@ -46,4 +46,4 @@ let randomCar = setInterval(function () { randomCarGenerator(map.map, myCars); }
 console.log(randomCar);
 console.log(myCars);
 
-module.exports = { randomCar };
+module.exports = { randomCar, myCars };
