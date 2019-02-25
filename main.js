@@ -34,10 +34,15 @@ process.stdin.on('keypress', function (ch, key) {
   }
 });
 
+function efd (térkép) {
+  console.clear();
+  console.log(térkép);
+}
+
 function asd (cars) {
   console.log(cars);
 }
-
+setInterval(function () { efd(map.map); }, 100);
 setInterval(function () { asd(randomCar.myCars); }, 3000);
 
 buttonpress();
