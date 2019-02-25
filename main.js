@@ -1,6 +1,7 @@
 const map = require('./map'); // tömbhívás
 const ligthswitch = require('./lightswitch'); // lámpahívás
 const keypress = require('keypress'); // irányításhívás
+const output = require('./table'); // table meghívása
 
 // gombnyomás
 function buttonpress () {
@@ -8,6 +9,7 @@ function buttonpress () {
   keypress(process.stdin);
   process.stdin.resume();
 }
+console.log(output.output);
 
 process.stdin.on('keypress', function (ch, key) {
   if (key) {
@@ -27,7 +29,7 @@ process.stdin.on('keypress', function (ch, key) {
       process.exit(1);
     }
     console.clear();
-    console.log(map.map);
+    console.log(output.output);
   }
 });
 

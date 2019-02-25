@@ -6,7 +6,7 @@ function crash (array) {
     process.exit(1);
   } else if (array[13][13] = 'Z' && array[13][14] !== 0 && (array[14][15] === 4 || array[14][15] === 1)) {
     console.log('GAME OVER'); // bal felső baleset
-    process.exit(1); 
+    process.exit(1);
   } else if (array[16][13] = 'Z' && array[15][13] !== 0 && (array[14][14] === 1 || array[14][14] === 2)) {
     console.log('GAME OVER'); // bal alsó baleset
     process.exit(1);

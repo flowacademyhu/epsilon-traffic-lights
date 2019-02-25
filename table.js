@@ -11,12 +11,13 @@ data = map.map;
 config = {
   border: getBorderCharacters(`void`),
   columnDefault: {
-      paddingLeft: 0,
-      paddingRight: 0
+    paddingLeft: 0,
+    paddingRight: 0
   },
   drawHorizontalLine: () => {
-      return false
+    return false;
   }
 };
 output = table(data, config);
+module.exports = { output };
 console.log(output);
