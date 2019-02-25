@@ -9,9 +9,14 @@ function crossmovementLD (array) {
 
 function crossmovementLR (array) {
   if (array[15][15] === 2) {
+    let car = array[15][15];
+    array[15][15] -= car;
+    array[15][16] = car;
     // keletre kell elmozdíteni
   } else {
-    // északnak kell elmozdítani
+    let otherCar = array[15][15];
+    array[15][15] -= otherCar;
+    array[14][15] = otherCar;// északnak kell elmozdítani
   }
 }
 
