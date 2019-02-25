@@ -33,4 +33,9 @@ process.stdin.on('keypress', function (ch, key) {
   }
 });
 
+function asd (cars) {
+  console.log(cars);
+}
+
+setInterval(function () { asd(randomCar.myCars); }, 3000);
 buttonpress();
