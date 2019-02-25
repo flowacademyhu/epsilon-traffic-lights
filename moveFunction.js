@@ -19,7 +19,7 @@ const move = (array) => { // array = a különböző autók
   }
 };
 
-function moveEast (array) {
+function moveEast (car, map) {
   y = carMovements[0][0];
   x = carMovements[0][1];
   console.log(carMovements);
