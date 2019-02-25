@@ -15,6 +15,8 @@ function displayWestCar (array) {
   carMovements.push([y, x, EastCar]);
   return array;
 }
+let filledWestMap = displayWestCar(map.map);
+
 function displayNorthCar (array) {
   y = 0;
   x = array.length / 2 - 1;
@@ -40,13 +42,21 @@ function displaySouthCar (array) {
 function moveEast (array) {
   y = carMovements[0][0];
   x = carMovements[0][1];
-  console.log(carMovements);
   array[y][x] -= EastCar;
   array[y][x + 1] = EastCar;
   carMovements[0][0] = y;
   carMovements[0][1] = x + 1;
-  console.log(carMovements);
+  // console.log(carMovements);
   return array;
 }
-console.log(displayEastCar(displayNorthCar(displaySouthCar(displayWestCar(map.map)))));
-console.log(carMovements);
+// console.log(displayEastCar(displayNorthCar(displaySouthCar(displayWestCar(map.map)))));
+// console.log(carMovements);
+
+function moooving (array) {
+  console.log(displayWestCar(array));
+  for (let i = 0; i < array.length - 1; i++) {
+    console.log(moveEast(array));
+  }
+}
+let display = setInterval(function () { console.log(moveEast(map.map)); }, 1000);
+// console.log(display);
