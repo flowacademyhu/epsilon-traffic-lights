@@ -1,7 +1,8 @@
 const map = require('./map'); // tömbhívás
 const ligthswitch = require('./lightswitch'); // lámpahívás
 const keypress = require('keypress'); // irányításhívás
-const output = require('./table'); // table meghívása
+const randomCar = require('./randomCarGenerator'); // randomautóhívás
+const output = require('./table');
 
 // gombnyomás
 function buttonpress () {
