@@ -53,6 +53,18 @@ function moveEast (car, map) {
       map[car[0]][car[1] + 1] = temp; // megtörtént a csere
       car[1] += 1; // értéket növel
       return map; // friss mapot adja vissza
+    } else if (car[0] === 15 && car[1] === 14 && car[2] !== 1) {
+      let temp = map[car[0]][car[1]];
+      map[car[0]][car[1]] = map[car[0]][car[1] + 1];
+      map[car[0]][car[1] + 1] = temp; // megtörtént a csere
+      car[1] += 1;
+      return map;
+    } else if (car[0] === 15 && car[1] === 15 && car[2] === 2) {
+      let temp = map[car[0]][car[1]];
+      map[car[0]][car[1]] = map[car[0]][car[1] + 1];
+      map[car[0]][car[1] + 1] = temp; // megtörtént a csere
+      car[1] += 1;
+      return map;
     } else if (car[0] === 15 && car[1] > 15) {
       let temp = map[car[0]][car[1]];
       map[car[0]][car[1]] = map[car[0]][car[1] + 1];
@@ -71,6 +83,30 @@ function moveSouth (car, map) {
       map[car[0] + 1][car[1]] = temp;
       car[0] += 1;
       return map;
+    } else if (car[0] === 13 && car[1] === 14 && map[13][13] === 'Z') {
+      let temp = map[car[0]][car[1]];
+      map[car[0]][car[1]] = map[car[0] + 1][car[1]];
+      map[car[0] + 1][car[1]] = temp;
+      car[0] += 1;
+      return map;
+    } else if (car[0] === 14 && car[1] === 14 && car[2] !== 4) {
+      let temp = map[car[0]][car[1]];
+      map[car[0]][car[1]] = map[car[0] + 1][car[1]];
+      map[car[0] + 1][car[1]] = temp;
+      car[0] += 1;
+      return map;
+    } else if (car[0] === 15 && car[1] === 14 && car[2] === 1) {
+      let temp = map[car[0]][car[1]];
+      map[car[0]][car[1]] = map[car[0] + 1][car[1]];
+      map[car[0] + 1][car[1]] = temp;
+      car[0] += 1;
+      return map;
+    } else if (car[0] > 15 && car[1] === 14) {
+      let temp = map[car[0]][car[1]];
+      map[car[0]][car[1]] = map[car[0] + 1][car[1]];
+      map[car[0] + 1][car[1]] = temp;
+      car[0] += 1;
+      return map;
     }
   }
 }
@@ -78,6 +114,30 @@ function moveSouth (car, map) {
 function moveNorth (car, map) {
   if (map[car[0] - 1][car[1]] === 0) {
     if (car[0] > 16 && car[1] === 15) {
+      let temp = map[car[0]][car[1]];
+      map[car[0]][car[1]] = map[car[0] - 1][car[1]];
+      map[car[0] - 1][car[1]] = temp;
+      car[0] -= 1;
+      return map;
+    } else if (car[0] === 16 && car[1] === 15 && map[16][16] === 'Z') {
+      let temp = map[car[0]][car[1]];
+      map[car[0]][car[1]] = map[car[0] - 1][car[1]];
+      map[car[0] - 1][car[1]] = temp;
+      car[0] -= 1;
+      return map;
+    } else if (car[0] === 15 && car[1] === 15 && car[2] !== 2) {
+      let temp = map[car[0]][car[1]];
+      map[car[0]][car[1]] = map[car[0] - 1][car[1]];
+      map[car[0] - 1][car[1]] = temp;
+      car[0] -= 1;
+      return map;
+    } else if (car[0] === 14 && car[1] === 15 && car[2] === 3) {
+      let temp = map[car[0]][car[1]];
+      map[car[0]][car[1]] = map[car[0] - 1][car[1]];
+      map[car[0] - 1][car[1]] = temp;
+      car[0] -= 1;
+      return map;
+    } else if (car[0] < 14 && car[1] === 15) {
       let temp = map[car[0]][car[1]];
       map[car[0]][car[1]] = map[car[0] - 1][car[1]];
       map[car[0] - 1][car[1]] = temp;
@@ -94,9 +154,34 @@ function moveWest (car, map) {
       map[car[0]][car[1] - 1] = temp;
       car[1] -= 1;
       return map;
+    } else if (car[0] === 14 && car[1] === 16 && map[13][16] === 'Z') {
+      let temp = map[car[0]][car[1]];
+      map[car[0]][car[1]] = map[car[0]][car[1] - 1];
+      map[car[0]][car[1] - 1] = temp;
+      car[1] -= 1;
+      return map;
+    } else if (car[0] === 14 && car[1] === 15 && car[2] !== 3) {
+      let temp = map[car[0]][car[1]];
+      map[car[0]][car[1]] = map[car[0]][car[1] - 1];
+      map[car[0]][car[1] - 1] = temp;
+      car[1] -= 1;
+      return map;
+    } else if (car[0] === 14 && car[1] === 14 && car[2] === 4) {
+      let temp = map[car[0]][car[1]];
+      map[car[0]][car[1]] = map[car[0]][car[1] - 1];
+      map[car[0]][car[1] - 1] = temp;
+      car[1] -= 1;
+      return map;
+    } else if (car[0] === 14 && car[1] < 14) {
+      let temp = map[car[0]][car[1]];
+      map[car[0]][car[1]] = map[car[0]][car[1] - 1];
+      map[car[0]][car[1] - 1] = temp;
+      car[1] -= 1;
+      return map;
     }
-  }
+  } return map;
 }
+
 const carRemove = (car, carsArr) => {
   if (car[0] === 0 && car[1] === 15) {
     carsArr.slice(car); // északon távozó autót kiveszi a tömbből
