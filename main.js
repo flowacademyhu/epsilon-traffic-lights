@@ -40,11 +40,11 @@ function efd (térkép) {
   console.log(térkép);
 }
 
-/* function asd (cars) {
+function asd (cars) {
   console.log(cars);
-} */
+}
 
 setInterval(function () { efd(map.map); }, 100);
-// setInterval(function () { asd(randomCar.myCars); }, 100);
+setInterval(function () { asd(randomCar.myCars); }, 100);
 
 buttonpress();
