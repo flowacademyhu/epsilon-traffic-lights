@@ -32,7 +32,7 @@ const randomCarGenerator = (array, carArray) => {
     case 4:
       let carValue4 = Math.floor(Math.random() * (max - min)) + min;
       array[14][29] = carValue4;
-      carArray.push([0, 14, carValue4]);
+      carArray.push([14, 29, carValue4]);
       return array;
   }
   return array;
@@ -41,6 +41,6 @@ const randomCarGenerator = (array, carArray) => {
 // vmi nem fasza
 // setInterval(randomCarGenerator(map.map, myCars), 5000);
 
-let randomCar = setInterval(function () { randomCarGenerator(map.map, myCars); }, 5000);
+let randomCar = setInterval(function () { randomCarGenerator(map.map, myCars); }, 3000);
 
 module.exports = { randomCar, myCars };
