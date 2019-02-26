@@ -26,14 +26,4 @@ function buildMap (array) {
 }
 let map = buildMap(genArr(30));
 
-/* function draw (array) {
-  for (let i = 0; i < array.length; i++) {
-    let row = ' ';
-    for (let j = 0; j < array[i]; j++) {
-      row += array[i][j] + ' ';
-      console.log(row);
-    }
-  } return array;
-}
-// console.log(draw(map)); */
 module.exports = { map };
