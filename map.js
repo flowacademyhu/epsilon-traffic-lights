@@ -25,6 +25,5 @@ function buildMap (array) {
   return array;
 }
 let map = buildMap(genArr(30));
-// console.log(map);
 
 module.exports = { map };

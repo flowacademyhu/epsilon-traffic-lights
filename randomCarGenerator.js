@@ -43,7 +43,4 @@ const randomCarGenerator = (array, carArray) => {
 
 let randomCar = setInterval(function () { randomCarGenerator(map.map, myCars); }, 5000);
 
-console.log(randomCar);
-console.log(myCars);
-
 module.exports = { randomCar, myCars };
