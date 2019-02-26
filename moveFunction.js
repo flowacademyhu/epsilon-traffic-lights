@@ -75,18 +75,22 @@ const carRemove = (car, carsArr) => {
   if (car[0] === 0 && car[1] === 15) {
     carsArr.slice(car); // északon távozó autót kiveszi a tömbből
     map.map[0][15] = 0;
+    map.map[1][17] += 1; // SCORE +1
     return false;
   } else if (car[0] === 29 && car[1] === 14) {
     carsArr.slice(car); // délen távozó autót kiveszi a tömbből
     map.map[29][14] = 0;
+    map.map[1][17] += 1; // SCORE +1
     return false;
   } else if (car[0] === 15 && car[1] === 29) {
     carsArr.slice(car); // keleten távozó autót kiveszi a tömbből
     map.map[15][29] = 0;
+    map.map[1][17] += 1; // SCORE +1
     return false;
   } else if (car[0] === 14 && car[1] === 0) {
     carsArr.slice(car); // nyugaton távozó autót kiveszi a tömbből
     map.map[14][0] = 0;
+    map.map[1][17] += 1; // SCORE +1
     return false;
   } else {
     return true;
