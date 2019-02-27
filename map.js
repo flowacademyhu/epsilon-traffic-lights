@@ -15,7 +15,7 @@ function buildMap (array) {
       array[15][x] = road;
       array[y][14] = road;
       array[y][15] = road;
-      // array[y][x] = empty;
+      array[y][x] = empty;
     }
   }
   array[13][13] = lamp;
