@@ -32,7 +32,7 @@ process.stdin.on('keypress', function (ch, key) {
       process.exit(1);
     }
     console.clear();
-    console.log(frontMap.frontMap(map.map));
+    // console.log(frontMap.frontMap(map.map));
   }
 });
 

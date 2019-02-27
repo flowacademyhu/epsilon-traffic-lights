@@ -1,4 +1,5 @@
 let map = require('./map');
+var ctx = require('axel');
 
 function frontMap (backMap) {
   let prettyPrint;
@@ -20,6 +21,18 @@ function frontMap (backMap) {
         prettyPrint += 'Z';
       } else if (backMap[i][j] === 'P') {
         prettyPrint += 'P';
+      } else if (backMap[i][j] === 'S') {
+        prettyPrint += 'S';
+      } else if (backMap[i][j] === 'c') {
+        prettyPrint += 'c';
+      } else if (backMap[i][j] === 'o') {
+        prettyPrint += 'o';
+      } else if (backMap[i][j] === 'r') {
+        prettyPrint += 'r';
+      } else if (backMap[i][j] === 'e') {
+        prettyPrint += 'e';
+      } else if (backMap[i][j] === ':') {
+        prettyPrint += ':';
       }
     }
     prettyPrint += '\n';
