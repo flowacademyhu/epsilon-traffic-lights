@@ -33,20 +33,22 @@ process.stdin.on('keypress', function (ch, key) {
     }
     console.clear();
     console.log(frontMap.frontMap(map.map));
+    console.log(randomCar.myCars);
   }
 });
 
 function efd (térkép) {
   console.clear();
   console.log(térkép);
+  console.log(randomCar.myCars);
 }
 
-/* function asd (cars) {
+function asd (cars) {
   console.log(cars);
-} */
+}
 
 setInterval(function () { efd(frontMap.frontMap(map.map)); }, 10);
 // setInterval(function () { efd(map.map); }, 100);
-// setInterval(function () { asd(randomCar.myCars); }, 100);
+setInterval(function () { asd(randomCar.myCars); }, 2000);
 
 buttonpress();

@@ -8,12 +8,11 @@ const frontMap = (backMap) => {
     for (let j = 0; j < backMap[i].length; j++) {
       row.push(backMap[i][j]);
     }
+    row.join('');
     resultString += row + '\n';
   }
   return resultString;
 };
-
-// setInterval(function () { frontMap(map); }, 10);
 
 // console.log(frontMap(map.map));
 
