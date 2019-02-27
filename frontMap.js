@@ -10,17 +10,17 @@ function frontMap (backMap) {
       } else if (backMap[i][j] === 0) {
         prettyPrint += '▓';
       } else if (backMap[i][j] === 1) {
-        prettyPrint += '¥';
+        prettyPrint += '\x1b[33m▓\x1b[0m';
       } else if (backMap[i][j] === 2) {
-        prettyPrint += '©';
+        prettyPrint += '\x1b[34m▓\x1b[0m';
       } else if (backMap[i][j] === 3) {
-        prettyPrint += 'Þ';
+        prettyPrint += '\x1b[35m▓\x1b[0m';
       } else if (backMap[i][j] === 4) {
-        prettyPrint += '×';
+        prettyPrint += '\x1b[36m▓\x1b[0m';
       } else if (backMap[i][j] === 'Z') {
-        prettyPrint += 'Z';
+        prettyPrint += '\x1b[32m▓\x1b[0m';
       } else if (backMap[i][j] === 'P') {
-        prettyPrint += 'P';
+        prettyPrint += '\x1b[31m▓\x1b[0m';
       } else if (backMap[i][j] === 'S') {
         prettyPrint += 'S';
       } else if (backMap[i][j] === 'c') {
