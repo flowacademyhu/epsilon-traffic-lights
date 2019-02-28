@@ -1,7 +1,6 @@
 const map = require('./map');
 
 let myCars = [];
-
 // készpálya = array
 // carArray = myCars
 // random generál egy autót az adott 4 koordináta egyikére
@@ -41,6 +40,10 @@ const randomCarGenerator = (array, carArray) => {
 // vmi nem fasza
 // setInterval(randomCarGenerator(map.map, myCars), 5000);
 
+<<<<<<< HEAD
 let randomCar = setInterval(function () { randomCarGenerator(map.map, myCars); }, 1800);
+=======
+let randomCar = setInterval(function () { randomCarGenerator(map.map, myCars); }, 3000);
+>>>>>>> dev
 
 module.exports = { randomCar, myCars };
