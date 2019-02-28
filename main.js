@@ -6,6 +6,8 @@ const move = require('./moveFunction'); // a mozgást hívja meg
 const gameOver = require('./manyCarsGameOver'); // torlódás és game over-t hívja meg
 const frontMap = require('./frontMap'); // meghívja a játszható mapot
 
+let myCars = []; // itt tároljuk az autóinkat
+
 // gombnyomás
 function buttonpress () {
   process.stdin.setRawMode(true);
@@ -38,6 +40,7 @@ function display (gamerMap) {
   console.log(gamerMap);
 }
 
-setInterval(function () { display(frontMap.frontMap(map.map)); }, 10);
-
-buttonpress();
+setInterval(function () { display(frontMap.frontMap(map.map)); }, 100); // frissíti a játékteret
+setInterval(function () { randomCar.randomCarGenerator(map.map, myCars); }, 3000); // random autólerakás
+setInterval(function () { move.move(myCars, map.map); }, 1000); // lépteti az autókat
+buttonpress(); // gombnyomás
