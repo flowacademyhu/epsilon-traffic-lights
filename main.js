@@ -9,7 +9,7 @@ const readlineSync = require('readline-sync');
 if (readlineSync.keyInYN('This is the traffic control game!\nDo you want to read the manual?\n\n')) {
   console.log('\x1b[5mYour task is to manage the traffic...\x1b[0m\n  1. Control the traffic lights (red or green) with the arrows\n');
   console.log('  2. A car deployed (at random) will move to the parking lot with the idenctical ones\n\n  3. Crash will happen if two cars intersect each others routes\n');
-  console.log('  3. Take care of the number of cars waiting in line, if the 5th car will stop due to the red light, the game will be over!\n\nGood luck!!!');
+  console.log('  3. Take care of the number of cars waiting in line, if the 8th car will stop due to the red light, the game will be over!\n\nGood luck!!!');
   if (readlineSync.keyIn('Press a button to start')) {} else {}
 } else {}
 

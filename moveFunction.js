@@ -4,16 +4,16 @@ global.scoreNumber = 0;
 
 const move = (array, backMap) => { // array = a különböző autók, backMap = "háttér" térkép
   if (backMap[13][16] === 'Z' && backMap[14][16] !== 0 && (backMap[15][15] !== 2 && backMap[15][15] !== 0)) {
-    console.log('1'); // jobb felső baleset
+    console.log('Game over. Crash in the northeast side of the crossroads.'); // jobb felső baleset
     process.exit(1);
   } else if (backMap[13][13] === 'Z' && backMap[13][14] !== 0 && (backMap[14][15] !== 3 && backMap[14][15] !== 0)) {
-    console.log('2'); // bal felső baleset
+    console.log('Game over. Crash in the northwest side of the crossroads.'); // bal felső baleset
     process.exit(1);
   } else if (backMap[16][13] === 'Z' && backMap[15][13] !== 0 && (backMap[14][14] !== 4 && backMap[14][14] !== 0)) {
-    console.log('G3333'); // bal alsó baleset
+    console.log('Game over. Crash in the southwest side of the crossroads.'); // bal alsó baleset
     process.exit(1);
   } else if (backMap[16][16] === 'Z' && backMap[16][15] !== 0 && (backMap[15][14] !== 1 && backMap[15][14] !== 0)) {
-    console.log('4'); // jobb alsó baleset
+    console.log('Game over. Crash in the northeast side of the crossroads.'); // jobb alsó baleset
     process.exit(1);
   }
   for (let i = 0; i < array.length; i++) { // autót vizsgál mozgásra
@@ -124,7 +124,7 @@ const swapEast = (car, map) => {
   car[1] += 1;
 };
 
-const swapSouth = (car, map) => { 
+const swapSouth = (car, map) => {
   let temp = map[car[0]][car[1]];
   map[car[0]][car[1]] = map[car[0] + 1][car[1]];
   map[car[0] + 1][car[1]] = temp;
