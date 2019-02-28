@@ -1,20 +1,44 @@
-const map = require('./map');
+let map = require('./map');
+var ctx = require('axel');
 
-const frontMap = (backMap) => {
-  let resultString = '';
-
+function frontMap (backMap) {
+  let prettyPrint;
   for (let i = 0; i < backMap.length; i++) {
-    let row = [];
     for (let j = 0; j < backMap[i].length; j++) {
-      row.push(backMap[i][j]);
+      if (backMap[i][j] === ' ') {
+        prettyPrint += '░';
+      } else if (backMap[i][j] === 0) {
+        prettyPrint += '▓';
+      } else if (backMap[i][j] === 1) {
+        prettyPrint += '\x1b[33m▓\x1b[0m';
+      } else if (backMap[i][j] === 2) {
+        prettyPrint += '\x1b[34m▓\x1b[0m';
+      } else if (backMap[i][j] === 3) {
+        prettyPrint += '\x1b[35m▓\x1b[0m';
+      } else if (backMap[i][j] === 4) {
+        prettyPrint += '\x1b[36m▓\x1b[0m';
+      } else if (backMap[i][j] === 'Z') {
+        prettyPrint += '\x1b[32m▓\x1b[0m';
+      } else if (backMap[i][j] === 'P') {
+        prettyPrint += '\x1b[31m▓\x1b[0m';
+      } else if (backMap[i][j] === 'S') {
+        prettyPrint += 'S';
+      } else if (backMap[i][j] === 'c') {
+        prettyPrint += 'c';
+      } else if (backMap[i][j] === 'o') {
+        prettyPrint += 'o';
+      } else if (backMap[i][j] === 'r') {
+        prettyPrint += 'r';
+      } else if (backMap[i][j] === 'e') {
+        prettyPrint += 'e';
+      } else if (backMap[i][j] === ':') {
+        prettyPrint += ':';
+      }
     }
-    resultString += row + '\n';
+    prettyPrint += '\n';
   }
-  return resultString;
-};
-
-// setInterval(function () { frontMap(map); }, 10);
-
-// console.log(frontMap(map.map));
+  return prettyPrint;
+}
+console.log(frontMap(map.map));
 
 module.exports = { frontMap };

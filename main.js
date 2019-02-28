@@ -5,7 +5,6 @@ const randomCar = require('./randomCarGenerator'); // randomautóhívás
 const move = require('./moveFunction'); // a mozgást hívja meg (sztem mehet a randomkocsigenerátorhoz)
 const gameOver = require('./manyCarsGameOver'); // torlódás és game over-t hívja meg
 const frontMap = require('./frontMap'); // meghívja a játszható mapot
-const output = require('./table');
 
 // gombnyomás
 function buttonpress () {
