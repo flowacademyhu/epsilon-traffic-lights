@@ -1,5 +1,7 @@
 const gameOver = require('./manyCarsGameOver');
 
+global.scoreNumber = 0;
+
 const move = (array, backMap) => { // array = a különböző autók, backMap = "háttér" térkép
   if (backMap[13][16] === 'Z' && backMap[14][16] !== 0 && (backMap[15][15] !== 2 && backMap[15][15] !== 0)) {
     console.log('1'); // jobb felső baleset
@@ -199,27 +201,26 @@ const carRemove = (car, carIndex, carsArr, map) => { // autó, autó sorszáma, 
   if (car[0] === 0 && car[1] === 15) {
     carsArr.splice(carIndex, 1); // északon távozó autót kiveszi a tömbből
     map[0][15] = 0;
-    map[2][24] += 1; // SCORE +1
+    global.scoreNumber += 1; // SCORE +1
     return false;
   } else if (car[0] === 29 && car[1] === 14) {
     carsArr.splice(carIndex, 1); // délen távozó autót kiveszi a tömbből
     map[29][14] = 0;
-    map[2][24] += 1; // SCORE +1
+    global.scoreNumber += 1; // SCORE +1
     return false;
   } else if (car[0] === 15 && car[1] === 29) {
     carsArr.splice(carIndex, 1); // keleten távozó autót kiveszi a tömbből
     map[15][29] = 0;
-    map[2][24] += 1; // SCORE +1
+    global.scoreNumber += 1; // SCORE +1
     return false;
   } else if (car[0] === 14 && car[1] === 0) {
     carsArr.splice(carIndex, 1); // nyugaton távozó autót kiveszi a tömbből
     map[14][0] = 0;
-    map[2][24] += 1; // SCORE +1
+    global.scoreNumber += 1; // SCORE +1
     return false;
   } else {
     return true;
   }
 };
-
 
 module.exports = { move, carRemove };
