@@ -57,35 +57,15 @@ const move = (array, backMap) => { // array = a különböző autók, backMap = 
 function moveEast (car, map) {
   if (map[car[0]][car[1] + 1] === 0) {
     if (car[0] === 15 && car[1] < 13) {
-      let temp = map[car[0]][car[1]];
-      map[car[0]][car[1]] = map[car[0]][car[1] + 1];
-      map[car[0]][car[1] + 1] = temp; // megtörtént a csere
-      car[1] += 1; // értéket növel
-      return map; // friss mapot adja vissza
+      swapEast(car, map);
     } else if (car[0] === 15 && car[1] === 13 && map[16][13] === 'Z') {
-      let temp = map[car[0]][car[1]];
-      map[car[0]][car[1]] = map[car[0]][car[1] + 1];
-      map[car[0]][car[1] + 1] = temp;
-      car[1] += 1;
-      return map;
+      swapEast(car, map);
     } else if (car[0] === 15 && car[1] === 14 && car[2] !== 1) {
-      let temp = map[car[0]][car[1]];
-      map[car[0]][car[1]] = map[car[0]][car[1] + 1];
-      map[car[0]][car[1] + 1] = temp;
-      car[1] += 1;
-      return map;
+      swapEast(car, map);
     } else if (car[0] === 15 && car[1] === 15 && car[2] === 2) {
-      let temp = map[car[0]][car[1]];
-      map[car[0]][car[1]] = map[car[0]][car[1] + 1];
-      map[car[0]][car[1] + 1] = temp;
-      car[1] += 1;
-      return map;
+      swapEast(car, map);
     } else if (car[0] === 15 && car[1] > 15) {
-      let temp = map[car[0]][car[1]];
-      map[car[0]][car[1]] = map[car[0]][car[1] + 1];
-      map[car[0]][car[1] + 1] = temp;
-      car[1] += 1;
-      return map;
+      swapEast(car, map);
     }
   } return map;
 }
@@ -93,109 +73,76 @@ function moveEast (car, map) {
 function moveSouth (car, map) {
   if (map[car[0] + 1][car[1]] === 0) {
     if (car[0] < 13 && car[1] === 14) {
-      let temp = map[car[0]][car[1]];
-      map[car[0]][car[1]] = map[car[0] + 1][car[1]];
-      map[car[0] + 1][car[1]] = temp;
-      car[0] += 1;
-      return map;
+      swapSouth(car, map);
     } else if (car[0] === 13 && car[1] === 14 && map[13][13] === 'Z') {
-      let temp = map[car[0]][car[1]];
-      map[car[0]][car[1]] = map[car[0] + 1][car[1]];
-      map[car[0] + 1][car[1]] = temp;
-      car[0] += 1;
-      return map;
+      swapSouth(car, map);
     } else if (car[0] === 14 && car[1] === 14 && car[2] !== 4) {
-      let temp = map[car[0]][car[1]];
-      map[car[0]][car[1]] = map[car[0] + 1][car[1]];
-      map[car[0] + 1][car[1]] = temp;
-      car[0] += 1;
-      return map;
+      swapSouth(car, map);
     } else if (car[0] === 15 && car[1] === 14 && car[2] === 1) {
-      let temp = map[car[0]][car[1]];
-      map[car[0]][car[1]] = map[car[0] + 1][car[1]];
-      map[car[0] + 1][car[1]] = temp;
-      car[0] += 1;
-      return map;
+      swapSouth(car, map);
     } else if (car[0] > 15 && car[1] === 14) {
-      let temp = map[car[0]][car[1]];
-      map[car[0]][car[1]] = map[car[0] + 1][car[1]];
-      map[car[0] + 1][car[1]] = temp;
-      car[0] += 1;
-      return map;
+      swapSouth(car, map);
     }
-  }
+  } return map;
 }
 
 function moveNorth (car, map) {
   if (map[car[0] - 1][car[1]] === 0) {
     if (car[0] > 16 && car[1] === 15) {
-      let temp = map[car[0]][car[1]];
-      map[car[0]][car[1]] = map[car[0] - 1][car[1]];
-      map[car[0] - 1][car[1]] = temp;
-      car[0] -= 1;
-      return map;
+      swapNorth(car, map);
     } else if (car[0] === 16 && car[1] === 15 && map[16][16] === 'Z') {
-      let temp = map[car[0]][car[1]];
-      map[car[0]][car[1]] = map[car[0] - 1][car[1]];
-      map[car[0] - 1][car[1]] = temp;
-      car[0] -= 1;
-      return map;
+      swapNorth(car, map);
     } else if (car[0] === 15 && car[1] === 15 && car[2] !== 2) {
-      let temp = map[car[0]][car[1]];
-      map[car[0]][car[1]] = map[car[0] - 1][car[1]];
-      map[car[0] - 1][car[1]] = temp;
-      car[0] -= 1;
-      return map;
+      swapNorth(car, map);
     } else if (car[0] === 14 && car[1] === 15 && car[2] === 3) {
-      let temp = map[car[0]][car[1]];
-      map[car[0]][car[1]] = map[car[0] - 1][car[1]];
-      map[car[0] - 1][car[1]] = temp;
-      car[0] -= 1;
-      return map;
+      swapNorth(car, map);
     } else if (car[0] < 14 && car[1] === 15) {
-      let temp = map[car[0]][car[1]];
-      map[car[0]][car[1]] = map[car[0] - 1][car[1]];
-      map[car[0] - 1][car[1]] = temp;
-      car[0] -= 1;
-      return map;
+      swapNorth(car, map);
     }
-  }
+  } return map;
 }
 function moveWest (car, map) {
   if (map[car[0]][car[1] - 1] === 0) {
     if (car[0] === 14 && car[1] > 16) {
-      let temp = map[car[0]][car[1]];
-      map[car[0]][car[1]] = map[car[0]][car[1] - 1];
-      map[car[0]][car[1] - 1] = temp;
-      car[1] -= 1;
-      return map;
+      swapWest(car, map);
     } else if (car[0] === 14 && car[1] === 16 && map[13][16] === 'Z') {
-      let temp = map[car[0]][car[1]];
-      map[car[0]][car[1]] = map[car[0]][car[1] - 1];
-      map[car[0]][car[1] - 1] = temp;
-      car[1] -= 1;
-      return map;
+      swapWest(car, map);
     } else if (car[0] === 14 && car[1] === 15 && car[2] !== 3) {
-      let temp = map[car[0]][car[1]];
-      map[car[0]][car[1]] = map[car[0]][car[1] - 1];
-      map[car[0]][car[1] - 1] = temp;
-      car[1] -= 1;
-      return map;
+      swapWest(car, map);
     } else if (car[0] === 14 && car[1] === 14 && car[2] === 4) {
-      let temp = map[car[0]][car[1]];
-      map[car[0]][car[1]] = map[car[0]][car[1] - 1];
-      map[car[0]][car[1] - 1] = temp;
-      car[1] -= 1;
-      return map;
+      swapWest(car, map);
     } else if (car[0] === 14 && car[1] < 14) {
-      let temp = map[car[0]][car[1]];
-      map[car[0]][car[1]] = map[car[0]][car[1] - 1];
-      map[car[0]][car[1] - 1] = temp;
-      car[1] -= 1;
-      return map;
+      swapWest(car, map);
     }
   } return map;
 }
+
+const swapEast = (car, map) => {
+  let temp = map[car[0]][car[1]];
+  map[car[0]][car[1]] = map[car[0]][car[1] + 1];
+  map[car[0]][car[1] + 1] = temp;
+  car[1] += 1;
+};
+
+const swapSouth = (car, map) => { 
+  let temp = map[car[0]][car[1]];
+  map[car[0]][car[1]] = map[car[0] + 1][car[1]];
+  map[car[0] + 1][car[1]] = temp;
+  car[0] += 1;
+};
+const swapNorth = (car, map) => {
+  let temp = map[car[0]][car[1]];
+  map[car[0]][car[1]] = map[car[0] - 1][car[1]];
+  map[car[0] - 1][car[1]] = temp;
+  car[0] -= 1;
+};
+
+const swapWest = (car, map) => {
+  let temp = map[car[0]][car[1]];
+  map[car[0]][car[1]] = map[car[0]][car[1] - 1];
+  map[car[0]][car[1] - 1] = temp;
+  car[1] -= 1;
+};
 
 const carRemove = (car, carIndex, carsArr, map) => { // autó, autó sorszáma, autók, "háttér" térkép
   if (car[0] === 0 && car[1] === 15) {
