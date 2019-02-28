@@ -1,7 +1,6 @@
 const cars = require('./randomCarGenerator');
 const map = require('./map');
 
-// PIMPELNI!!!!!!!!!!!!!!!! ADNI HOZZÁ + map PARAMÉTERT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 const move = (array) => { // array = a különböző autók,
   if (map.map[13][16] === 'Z' && map.map[14][16] !== 0 && (map.map[15][15] !== 2 && map.map[15][15] !== 0)) {
     console.log('1'); // jobb felső baleset
@@ -64,25 +63,25 @@ function moveEast (car, map) {
     } else if (car[0] === 15 && car[1] === 13 && map[16][13] === 'Z') {
       let temp = map[car[0]][car[1]];
       map[car[0]][car[1]] = map[car[0]][car[1] + 1];
-      map[car[0]][car[1] + 1] = temp; // megtörtént a csere
-      car[1] += 1; // értéket növel
-      return map; // friss mapot adja vissza
+      map[car[0]][car[1] + 1] = temp;
+      car[1] += 1;
+      return map;
     } else if (car[0] === 15 && car[1] === 14 && car[2] !== 1) {
       let temp = map[car[0]][car[1]];
       map[car[0]][car[1]] = map[car[0]][car[1] + 1];
-      map[car[0]][car[1] + 1] = temp; // megtörtént a csere
+      map[car[0]][car[1] + 1] = temp;
       car[1] += 1;
       return map;
     } else if (car[0] === 15 && car[1] === 15 && car[2] === 2) {
       let temp = map[car[0]][car[1]];
       map[car[0]][car[1]] = map[car[0]][car[1] + 1];
-      map[car[0]][car[1] + 1] = temp; // megtörtént a csere
+      map[car[0]][car[1] + 1] = temp;
       car[1] += 1;
       return map;
     } else if (car[0] === 15 && car[1] > 15) {
       let temp = map[car[0]][car[1]];
       map[car[0]][car[1]] = map[car[0]][car[1] + 1];
-      map[car[0]][car[1] + 1] = temp; // megtörtént a csere
+      map[car[0]][car[1] + 1] = temp;
       car[1] += 1;
       return map;
     }

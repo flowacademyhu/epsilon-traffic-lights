@@ -1,23 +1,16 @@
 const map = require('./map');
 
 let myCars = [];
-// készpálya = array
-// carArray = myCars
-// random generál egy autót az adott 4 koordináta egyikére
-// random ad egy értéket, DE helytől függően 3 közül ( vagy 4 ha megfordul )
-// ha dél kék, és délről jön, nem lehet kék az autó
 const randomCarGenerator = (array, carArray) => {
   let max = 5;
   let min = 1;
   let randomNum = Math.floor(Math.random() * (max - min)) + min;
-  console.clear(); // ide tűnik jónak!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  console.log(array); // asszem ez is
   switch (randomNum) {
     case 1:
       let carValue1 = Math.floor(Math.random() * (max - min)) + min;
       array[0][14] = carValue1;
       carArray.push([0, 14, carValue1]);
-      return array; // return kell a helyére, ami visszaadja az új map-ot???????????
+      return array;
     case 2:
       let carValue2 = Math.floor(Math.random() * (max - min)) + min;
       array[15][0] = carValue2;
@@ -36,9 +29,6 @@ const randomCarGenerator = (array, carArray) => {
   }
   return array;
 };
-
-// vmi nem fasza
-// setInterval(randomCarGenerator(map.map, myCars), 5000);
 
 let randomCar = setInterval(function () { randomCarGenerator(map.map, myCars); }, 3000);
 
