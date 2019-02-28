@@ -5,6 +5,12 @@ const randomCar = require('./randomCarGenerator'); // randomautóhívás
 const move = require('./moveFunction'); // a mozgást hívja meg
 const gameOver = require('./manyCarsGameOver'); // torlódás és game over-t hívja meg
 const frontMap = require('./frontMap'); // meghívja a játszható mapot
+const readlineSync = require('readline-sync');
+
+if (readlineSync.keyInYN('This is the traffic control game!\nDo you want to read the manual?')) {
+  console.log('manual');
+  if (readlineSync.keyIn('Press a button to start')) {} else { process.exit(); }
+} else {}
 
 // gombnyomás
 function buttonpress () {
