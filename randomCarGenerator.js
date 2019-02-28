@@ -1,7 +1,6 @@
 const map = require('./map');
 
 let myCars = [];
-
 // készpálya = array
 // carArray = myCars
 // random generál egy autót az adott 4 koordináta egyikére

@@ -18,19 +18,19 @@ const move = (array) => { // array = a különböző autók,
   }
   for (let i = 0; i < array.length; i++) { // autót vizsgál mozgásra
     if ((array[i][0] <= 13 || array[i][0] >= 16) && array[i][1] === 14) {
-      if (carRemove(array[i], array)) {
+      if (carRemove(array[i], i, array)) {
         moveSouth(array[i], map.map);
       } // délre mozgás crossroads előtt/után
     } else if ((array[i][0] >= 16 || array[i][0] <= 13) && array[i][1] === 15) {
-      if (carRemove(array[i], array)) {
+      if (carRemove(array[i], i, array)) {
         moveNorth(array[i], map.map);
       } // északra mozgás crossroads előtt/után
     } else if ((array[i][1] >= 16 || array[i][1] <= 13) && array[i][0] === 14) {
-      if (carRemove(array[i], array)) {
+      if (carRemove(array[i], i, array)) {
         moveWest(array[i], map.map);
       } // nyugatra mozgás crossroads előtt/után
     } else if ((array[i][1] <= 13 || array[i][1] >= 16) && array[i][0] === 15) {
-      if (carRemove(array[i], array)) {
+      if (carRemove(array[i], i, array)) {
         moveEast(array[i], map.map);
       } // keletre mozgás crossroads előtt/után
     } else if (array[i][0] === 14 && array[i][1] === 14 && array[i][2] === 4) {
@@ -196,24 +196,24 @@ function moveWest (car, map) {
   } return map;
 }
 
-const carRemove = (car, carsArr) => {
+const carRemove = (car, carIndex, carsArr) => {
   if (car[0] === 0 && car[1] === 15) {
-    carsArr.slice(car); // északon távozó autót kiveszi a tömbből
+    carsArr.splice(carIndex, 1); // északon távozó autót kiveszi a tömbből
     map.map[0][15] = 0;
     map.map[2][24] += 1; // SCORE +1
     return false;
   } else if (car[0] === 29 && car[1] === 14) {
-    carsArr.slice(car); // délen távozó autót kiveszi a tömbből
+    carsArr.splice(carIndex, 1); // délen távozó autót kiveszi a tömbből
     map.map[29][14] = 0;
     map.map[2][24] += 1; // SCORE +1
     return false;
   } else if (car[0] === 15 && car[1] === 29) {
-    carsArr.slice(car); // keleten távozó autót kiveszi a tömbből
+    carsArr.splice(carIndex, 1); // keleten távozó autót kiveszi a tömbből
     map.map[15][29] = 0;
     map.map[2][24] += 1; // SCORE +1
     return false;
   } else if (car[0] === 14 && car[1] === 0) {
-    carsArr.slice(car); // nyugaton távozó autót kiveszi a tömbből
+    carsArr.splice(carIndex, 1); // nyugaton távozó autót kiveszi a tömbből
     map.map[14][0] = 0;
     map.map[2][24] += 1; // SCORE +1
     return false;

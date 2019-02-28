@@ -7,7 +7,7 @@ function genArr (size) {
 }
 let lamp = 'P';
 let road = 0;
-let empty = ' ';
+// let empty = ' ';
 function buildMap (array) {
   for (let y = 0; y < array.length; y++) {
     for (let x = 0; x < array[y].length; x++) {

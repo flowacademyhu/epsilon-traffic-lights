@@ -4,6 +4,7 @@ const keypress = require('keypress'); // irányításhívás
 const randomCar = require('./randomCarGenerator'); // randomautóhívás
 const move = require('./moveFunction'); // a mozgást hívja meg (sztem mehet a randomkocsigenerátorhoz)
 const gameOver = require('./manyCarsGameOver'); // torlódás és game over-t hívja meg
+const frontMap = require('./frontMap'); // meghívja a játszható mapot
 const output = require('./table');
 
 // gombnyomás
@@ -32,7 +33,7 @@ process.stdin.on('keypress', function (ch, key) {
       process.exit(1);
     }
     console.clear();
-    console.log(output.output);
+    console.log(frontMap.frontMap(map.map));
   }
 });
 
@@ -41,11 +42,12 @@ function efd (térkép) {
   console.log(térkép);
 }
 
-/* function asd (cars) {
+function asd (cars) {
   console.log(cars);
-} */
+}
 
-setInterval(function () { efd(map.map); }, 100);
-// setInterval(function () { asd(randomCar.myCars); }, 100);
+setInterval(function () { efd(frontMap.frontMap(map.map)); }, 10);
+// setInterval(function () { efd(map.map); }, 100);
+setInterval(function () { asd(randomCar.myCars); }, 100);
 
 buttonpress();
