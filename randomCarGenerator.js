@@ -1,7 +1,3 @@
-const map = require('./map');
-
-let myCars = [];
-
 const randomCarGenerator = (array, carArray) => {
   let max = 5;
   let min = 1;
@@ -31,6 +27,4 @@ const randomCarGenerator = (array, carArray) => {
   return array;
 };
 
-let randomCar = setInterval(function () { randomCarGenerator(map.map, myCars); }, 3000);
-
-module.exports = { randomCar, myCars };
+module.exports = { randomCarGenerator };

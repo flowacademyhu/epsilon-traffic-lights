@@ -1,5 +1,3 @@
-const map = require('./map');
-
 const gameOver = (map) => {
   if (map[13][14] !== 0 && map[12][14] !== 0 && map[11][14] !== 0 && map[10][14] !== 0 && map[9][14] !== 0) {
     console.log('Game Over1'); // északról dugó
@@ -15,7 +13,5 @@ const gameOver = (map) => {
     process.exit(1);
   }
 };
-
-setInterval(function () { gameOver(map.map); }, 10);
 
 module.exports = { gameOver };

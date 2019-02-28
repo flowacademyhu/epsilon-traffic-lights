@@ -12,6 +12,8 @@ if (readlineSync.keyInYN('This is the traffic control game!\nDo you want to read
   if (readlineSync.keyIn('Press a button to start')) {} else { process.exit(); }
 } else {}
 
+let myCars = []; // itt tároljuk az autóinkat
+
 // gombnyomás
 function buttonpress () {
   process.stdin.setRawMode(true);
@@ -44,6 +46,7 @@ function display (gamerMap) {
   console.log(gamerMap);
 }
 
-setInterval(function () { display(frontMap.frontMap(map.map)); }, 10);
-
-buttonpress();
+setInterval(function () { display(frontMap.frontMap(map.map)); }, 100); // frissíti a játékteret
+setInterval(function () { randomCar.randomCarGenerator(map.map, myCars); }, 3000); // random autólerakás
+setInterval(function () { move.move(myCars, map.map); }, 1000); // lépteti az autókat
+buttonpress(); // gombnyomás
