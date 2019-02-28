@@ -1,5 +1,3 @@
-// const map = require('./map');
-
 function lightswitch (i, array) {
   switch (i) {
     case 1:

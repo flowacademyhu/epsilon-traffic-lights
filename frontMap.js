@@ -1,5 +1,4 @@
 let map = require('./map');
-var ctx = require('axel');
 
 function frontMap (backMap) {
   let prettyPrint;
@@ -39,6 +38,5 @@ function frontMap (backMap) {
   }
   return prettyPrint;
 }
-console.log(frontMap(map.map));
 
 module.exports = { frontMap };
