@@ -1,5 +1,3 @@
-let map = require('./map');
-
 function frontMap (backMap) {
   let prettyPrint;
   for (let i = 0; i < backMap.length; i++) {
