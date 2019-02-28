@@ -4,6 +4,12 @@ const keypress = require('keypress'); // irányításhívás
 const randomCar = require('./randomCarGenerator'); // randomautóhívás
 const move = require('./moveFunction'); // a mozgást hívja meg
 const frontMap = require('./frontMap'); // meghívja a játszható mapot
+const readlineSync = require('readline-sync');
+
+if (readlineSync.keyInYN('This is the traffic control game!\nDo you want to read the manual?')) {
+  console.log('manual');
+  if (readlineSync.keyIn('Press a button to start')) {} else { process.exit(); }
+} else {}
 
 let myCars = []; // itt tároljuk az autóinkat
 let interval = 1000; // 1 másodperc
