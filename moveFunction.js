@@ -123,97 +123,6 @@ function moveSouth (car, map) {
       return map;
     }
   }
-<<<<<<< HEAD
-}
-
-function moveNorth (car, map) {
-  if (map[car[0] - 1][car[1]] === 0) {
-    if (car[0] > 16 && car[1] === 15) {
-      let temp = map[car[0]][car[1]];
-      map[car[0]][car[1]] = map[car[0] - 1][car[1]];
-      map[car[0] - 1][car[1]] = temp;
-      car[0] -= 1;
-      return map;
-    } else if (car[0] === 16 && car[1] === 15 && map[16][16] === 'Z') {
-      let temp = map[car[0]][car[1]];
-      map[car[0]][car[1]] = map[car[0] - 1][car[1]];
-      map[car[0] - 1][car[1]] = temp;
-      car[0] -= 1;
-      return map;
-    } else if (car[0] === 15 && car[1] === 15 && car[2] !== 2) {
-      let temp = map[car[0]][car[1]];
-      map[car[0]][car[1]] = map[car[0] - 1][car[1]];
-      map[car[0] - 1][car[1]] = temp;
-      car[0] -= 1;
-      return map;
-    } else if (car[0] === 14 && car[1] === 15 && car[2] === 3) {
-      let temp = map[car[0]][car[1]];
-      map[car[0]][car[1]] = map[car[0] - 1][car[1]];
-      map[car[0] - 1][car[1]] = temp;
-      car[0] -= 1;
-      return map;
-    } else if (car[0] < 14 && car[1] === 15) {
-      let temp = map[car[0]][car[1]];
-      map[car[0]][car[1]] = map[car[0] - 1][car[1]];
-      map[car[0] - 1][car[1]] = temp;
-      car[0] -= 1;
-      return map;
-    }
-  }
-}
-function moveWest (car, map) {
-  if (map[car[0]][car[1] - 1] === 0) {
-    if (car[0] === 14 && car[1] > 16) {
-      let temp = map[car[0]][car[1]];
-      map[car[0]][car[1]] = map[car[0]][car[1] - 1];
-      map[car[0]][car[1] - 1] = temp;
-      car[1] -= 1;
-      return map;
-    } else if (car[0] === 14 && car[1] === 16 && map[13][16] === 'Z') {
-      let temp = map[car[0]][car[1]];
-      map[car[0]][car[1]] = map[car[0]][car[1] - 1];
-      map[car[0]][car[1] - 1] = temp;
-      car[1] -= 1;
-      return map;
-    } else if (car[0] === 14 && car[1] === 15 && car[2] !== 3) {
-      let temp = map[car[0]][car[1]];
-      map[car[0]][car[1]] = map[car[0]][car[1] - 1];
-      map[car[0]][car[1] - 1] = temp;
-      car[1] -= 1;
-      return map;
-    } else if (car[0] === 14 && car[1] === 14 && car[2] === 4) {
-      let temp = map[car[0]][car[1]];
-      map[car[0]][car[1]] = map[car[0]][car[1] - 1];
-      map[car[0]][car[1] - 1] = temp;
-      car[1] -= 1;
-      return map;
-    } else if (car[0] === 14 && car[1] < 14) {
-      let temp = map[car[0]][car[1]];
-      map[car[0]][car[1]] = map[car[0]][car[1] - 1];
-      map[car[0]][car[1] - 1] = temp;
-      car[1] -= 1;
-      return map;
-    }
-  } return map;
-}
-
-const carRemove = (car, carsArr) => {
-  if (car[0] === 0 && car[1] === 15) {
-    carsArr.slice(car); // északon távozó autót kiveszi a tömbből
-    map.map[0][15] = 0;
-    return false;
-  } else if (car[0] === 29 && car[1] === 14) {
-    carsArr.slice(car); // délen távozó autót kiveszi a tömbből
-    map.map[29][14] = 0;
-    return false;
-  } else if (car[0] === 15 && car[1] === 29) {
-    carsArr.slice(car); // keleten távozó autót kiveszi a tömbből
-    map.map[15][29] = 0;
-    return false;
-  } else if (car[0] === 14 && car[1] === 0) {
-    carsArr.slice(car); // nyugaton távozó autót kiveszi a tömbből
-    map.map[14][0] = 0;
-=======
 }
 
 function moveNorth (car, map) {
@@ -307,7 +216,6 @@ const carRemove = (car, carIndex, carsArr) => {
     carsArr.splice(carIndex, 1); // nyugaton távozó autót kiveszi a tömbből
     map.map[14][0] = 0;
     map.map[2][24] += 1; // SCORE +1
->>>>>>> dev
     return false;
   } else {
     return true;
@@ -316,9 +224,4 @@ const carRemove = (car, carIndex, carsArr) => {
 
 setInterval(function () { move(cars.myCars); }, 1000);
 
-<<<<<<< HEAD
-module.exports = { move };
-// module.exports = { crash };
-=======
 module.exports = { move, carRemove };
->>>>>>> dev
