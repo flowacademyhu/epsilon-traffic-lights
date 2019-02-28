@@ -50,10 +50,9 @@ process.stdin.on('keypress', function (ch, key) {
       randomCar.randomCarGenerator(map.map, myCars);
     }
     move.move(myCars, map.map);
-    console.log(global.scoreNumber);
     counter++;
-    if (global.scoreNumber > 0 && global.scoreNumber % 2 === 0) {
-      interval -= 600; // javítani, ha nem sikerül akkor marad az if, else is
+    if (interval > 100) {
+      interval -= 10; // sebesség növelése
     }
     setTimeout(timer, interval);
   };
