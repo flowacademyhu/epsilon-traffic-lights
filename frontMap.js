@@ -2,7 +2,7 @@ function frontMap (backMap) {
   let prettyPrint = '';
   for (let i = 0; i < backMap.length; i++) {
     for (let j = 0; j < backMap[i].length; j++) {
-      if (backMap[i][j] === ' ') {
+      if (backMap[i][j] === '  ') {
         prettyPrint += '░░';
       } else if (backMap[i][j] === 0) {
         prettyPrint += '▓▓';
