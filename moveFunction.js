@@ -16,7 +16,7 @@ const move = (array, backMap) => { // array = a különböző autók, backMap = 
     console.log('Your score: ' + global.scoreNumber);
     process.exit(1);
   } else if (backMap[16][16] === 'Z' && backMap[16][15] !== 0 && (backMap[15][14] !== 1 && backMap[15][14] !== 0)) {
-    console.log('Game over. Crash in the northeast side of the crossroads.'); // jobb alsó baleset
+    console.log('Game over. Crash in the southeast side of the crossroads.'); // jobb alsó baleset
     console.log('Your score: ' + global.scoreNumber);
     process.exit(1);
   }

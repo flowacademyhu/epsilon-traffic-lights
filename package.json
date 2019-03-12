@@ -1,16 +1,19 @@
 {
-  "name": "traffic",
+  "name": "@flowacademy/traffic",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "This is a traffic/crossroads simulator. You have to switch the lights and manage the movement of the cars.",
+  "licence": "apache2",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin":{
+    "epsilon-traffic": "./main.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/flowacademyhu/epsilon-traffic-lights.git"
   },
-  "author": "",
+  "author": "Micsik Zoltán, Viczián Tamás, Juhász Dániel - Flow Academy",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/flowacademyhu/epsilon-traffic-lights/issues"

@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const map = require('./map'); // tömbhívás
 const ligthswitch = require('./lightswitch'); // lámpahívás
 const keypress = require('keypress'); // irányításhívás
